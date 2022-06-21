@@ -22,6 +22,7 @@ With the help of [Streamlit](https://streamlit.io/) I have managed to create my 
 
 ## Model Accuracy
 This app is built on a ML model with **87%** accuracy, performance of model is summarised below:
+
 ![eval_acc](Static/pipeline_eval_acc.png)
 
 | Classification Report | Confusion Matrix |
@@ -43,23 +44,28 @@ The dataset consists of 303 observations and 14 columns `(303,14)`, all of which
 
 ## Data Inspection/ Cleaning
 Dataset is fairly balanced:
+
 ![output](static/visualisation_output.png)
 
 Upon inspection 1 duplicate observations and 2 null values in `'thall'` are observed:
 ![df_dup](static/visualisation_duplicate.png)
 ![df_null](static/visualisation_null.png)
+
 Null value is represented by `0` and hence filled using imputation by median method.
 
 ## Feature selection
 ### Numeric data
 **Logistic Regression** is used to infer correlation of selected column to target feature `'output'`:
 ![feature_num](static/feature_select_num.png)
+
 Numeric features with R-squared value lesser than 0.65 are filtered. 
 
 ### Categorical data
 **Cramer's V** is used to study correlation of categorical features to target feature `'output'`:
 ![feature_cat](static/feature_select_cat.png)
+
 Since most categorical features show low correlation to target column only 'cp' and 'thall' are selected.
+
 ![feature](static/finalised_feature.png)
 
 ### Train and test data
@@ -71,13 +77,15 @@ Pipelines with different combinations of scalers and classification models are b
 
 ### Best pipeline
 Upon testing it is observed that the optimum pipeline is built base on **`StandardScaler()`** with **`LogisticRegression()`**:
-![best_param](Static/pipeline_best.png)
+
+![best_pl](Static/pipeline_best.png)
 
 ### Finetune pipeline
 **GridSearchCV** with cross validation `cv=5` is applied to finetune the optimum pipeline. Hyperparameter `C` and `penalty` are tested out:
 ![pl_finetune](Static/pipeline_finetune.png)
 
 Optimum hyperparamter:
+
 ![best_param](Static/pipeline_best_param.png)
 
 ## Discussion
