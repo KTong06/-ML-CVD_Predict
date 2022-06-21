@@ -34,7 +34,7 @@ with st.form("my_form"):
                       np.arange(0,4,1,dtype=int))
     
     thall = st.selectbox('Thalium Stress Test result (1-Fixed defect, 2-Normal, 3-Reversable defect):',
-                           np.arange(0,4,1,dtype=int))
+                           np.arange(1,4,1,dtype=int))
     
     col1,col2,col3 = st.columns([1,1,1])
     
