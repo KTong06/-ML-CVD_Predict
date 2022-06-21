@@ -23,7 +23,7 @@ With the help of [Streamlit](https://streamlit.io/) I have managed to create my 
 ## Model Accuracy
 This app is built on a ML model with **87%** accuracy, performance of model is summarised below:
 
-![eval_acc](Static/pipeline_eval_acc.png)
+![eval_acc](static/pipeline_eval_acc.png)
 
 | Classification Report | Confusion Matrix |
 | --------------------- | ---------------- |
@@ -31,7 +31,7 @@ This app is built on a ML model with **87%** accuracy, performance of model is s
 
 ### Testing model with new observations
 Prior to deploying the model I have also tested the model with several new observations as shown below:
-![test_data](Static/test_dataset.png)
+![test_data](static/test_dataset.png)
 
 The model is able to achieve **80%** accuracy.
 | Classification Report | Confusion Matrix |
@@ -78,15 +78,15 @@ Pipelines with different combinations of scalers and classification models are b
 ### Best pipeline
 Upon testing it is observed that the optimum pipeline is built base on **`StandardScaler()`** with **`LogisticRegression()`**:
 
-![best_pl](Static/pipeline_best.png)
+![best_pl](static/pipeline_best.png)
 
 ### Finetune pipeline
 **GridSearchCV** with cross validation `cv=5` is applied to finetune the optimum pipeline. Hyperparameter `C` and `penalty` are tested out:
-![pl_finetune](Static/pipeline_finetune.png)
+![pl_finetune](static/pipeline_finetune.png)
 
 Optimum hyperparamter:
 
-![best_param](Static/pipeline_best_param.png)
+![best_param](static/pipeline_best_param.png)
 
 ## Discussion
 Model is able to achieve 87% and 80% during best pipeline evaluation and testing on new observations respectively. Suggestions to improve model:
